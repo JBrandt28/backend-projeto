@@ -36,4 +36,4 @@ Usuario.sync({
     alter: true
 });
 
-module.exports =Usuario;
+module.exports = Usuario;
