@@ -22,7 +22,8 @@ const Usuario = conexao.define('usuario', {
     },
     email: {
         type: Sequelize.STRING(255),
-        allowNull: false
+        allowNull: false,
+        unique: true // Adicionei uma restrição de unicidade para o email
     },
     senha: {
         type: Sequelize.STRING(255),
@@ -32,8 +33,12 @@ const Usuario = conexao.define('usuario', {
     timestamps: false
 });
 
-Usuario.sync({
-    alter: true
-});
+Usuario.sync({ alter: true })
+    .then(() => {
+        console.log('Tabela de usuários sincronizada');
+    })
+    .catch((err) => {
+        console.error('Erro ao sincronizar tabela de usuários:', err);
+    });
 
 module.exports = Usuario;

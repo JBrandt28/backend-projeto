@@ -5,6 +5,7 @@
     "express": "^4.19.2",
     "mysql": "^2.18.1",
     "mysql2": "^3.10.0",
+    "react-router-dom": "^6.23.1",
     "sequelize": "^6.37.3"
   },
   "name": "bd",
